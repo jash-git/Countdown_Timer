@@ -2176,6 +2176,10 @@ public class CommonModule
 			{
 				cancelNotification();
 				System.exit(0);//关闭程序语法
+			    if (null != m_MA.mWakeLock)
+			    { 
+			    	m_MA.mWakeLock.release(); m_MA.mWakeLock = null;
+			    }				
 				// 或使用Process.killProcess(Process.myPid());
 			}
 		})//

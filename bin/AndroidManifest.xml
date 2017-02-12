@@ -15,8 +15,9 @@
 	<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 	
-    <!-- Android 線程優先順序修改 --> 
-    <uses-permission android:name="android.permission.RAISED_THREAD_PRIORITY"/>
+    
+    <uses-permission android:name="android.permission.RAISED_THREAD_PRIORITY"/><!-- Android 線程優先順序修改 --> 
+    <uses-permission android:name="android.permission.WAKE_LOCK"/><!--禁止CPU休眠-->
 		
     <application
         android:allowBackup="true"

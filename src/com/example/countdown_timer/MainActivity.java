@@ -9,6 +9,7 @@ import com.CommonModule;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.os.PowerManager;
 import android.app.Activity;
 import android.content.Context;
 import android.content.res.Configuration;
@@ -29,6 +30,7 @@ public class MainActivity extends Activity {
 	public boolean m_blnLANDSCAPE;
 	public String m_StrSetValue;
 	public float m_fltTotalSec;
+	public PowerManager.WakeLock mWakeLock;//禁止CPU休眠
 	
 	public Button m_ButStart;
 	public Button m_ButStop;
@@ -88,6 +90,13 @@ public class MainActivity extends Activity {
 	            audioManager.setStreamVolume(AudioManager.STREAM_MUSIC, progress, AudioManager.FLAG_ALLOW_RINGER_MODES);
 	        }
 	    });
+	    
+	    PowerManager pm = (PowerManager) getSystemService(Context.POWER_SERVICE);
+	    mWakeLock = pm.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK |PowerManager.ON_AFTER_RELEASE, ""); 
+        if (null != mWakeLock)
+        { 
+            mWakeLock.acquire();
+        }	    
 		
 	}
 	@Override
