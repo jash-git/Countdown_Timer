@@ -16,7 +16,8 @@
         android:layout_alignParentTop="true"
         android:layout_marginTop="17dp"
         android:text="30"
-        android:ems="10" />
+        android:digits="1234567890."
+        android:ems="50" />
 
     <Button
         android:id="@+id/button1"

@@ -16,6 +16,7 @@ import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.SeekBar;
@@ -60,6 +61,8 @@ public class MainActivity extends Activity {
 		m_CM.RawFile2SD(R.raw.m01,"countdown_timer","m01.mp3");
 		m_context=(Context)this;
 		m_ButStop.setEnabled(false);
+		
+		m_edtValue.setInputType(EditorInfo.TYPE_CLASS_PHONE);//只能輸入數字->對應屬性 android:digits="1234567890."
 		
 		m_ButStart.setOnClickListener(new ButListener());
 		m_ButStop.setOnClickListener(new ButListener());
